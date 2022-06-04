@@ -21,6 +21,17 @@ namespace CompAndDel
             IPicture picture2 = provider.GetPicture(@"beer.jpg");
             IPicture image2 = pipe2.Send(picture2);
             provider.SavePicture(image2,@"beercopy.jpg");
+            // Se crea imagenes solo con Filtro de Escala de Grises
+            IPipe pipe3 = new PipeSerial(greyscalefilter,pipenull);
+            IPicture picture3 = provider.GetPicture(@"beer.jpg");
+            IPicture image3 = pipe3.Send(picture3);
+            provider.SavePicture(image3,@"beergrey.jpg");
+            IPicture picture4 = provider.GetPicture(@"luke.jpg");
+            IPicture image4 = pipe3.Send(picture4);
+            provider.SavePicture(image4,@"lukegrey.jpg");
+
+            //Ejercicio 2
+
         }
     }
 }
