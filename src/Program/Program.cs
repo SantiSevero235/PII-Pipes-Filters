@@ -49,6 +49,8 @@ namespace CompAndDel
             tweet.Filter("By: Santi Severo",$"imagen0");
             tweet.Filter("By: Santi Severo",$"imagen1");
 
+            //Ejercicio 4
+            //No pude realizar
 
         }
     }
