@@ -12,9 +12,10 @@ namespace CompAndDel
             //Ejercicio 1
             PictureProvider provider = new PictureProvider();
             IPicture picture = provider.GetPicture(@"luke.jpg");
+            //Se crea filtros
             IFilter negativefilter = new FilterNegative();
             IFilter greyscalefilter = new FilterGreyscale();
-            IPipe pipenull = new PipeNull();
+            IPipe pipenull = new PipeNull();//Se crea PipeNull
             IPipe pipe = new PipeSerial(negativefilter,pipenull);
             IPicture image1 = pipe.Send(picture);
             provider.SavePicture(image1,@"lukecopy.jpg");
@@ -33,6 +34,7 @@ namespace CompAndDel
             provider.SavePicture(image4,@"lukegrey.jpg");
 
             //Ejercicio 2
+            //Se crea Filter Save
             IFilter filtersave = new FilterSave();
             IPicture picej2=provider.GetPicture(@"luke.jpg");
             IPicture Imagen1 = pipe.Send(picej2);
@@ -42,9 +44,11 @@ namespace CompAndDel
             num++; 
 
             //Ejercicio 3
+            //Se crea Filtro de Twitter
             FilterTwitter tweet = new FilterTwitter();
-            tweet.Filter("By: Santi Severo",$"imagen{num}");
-            tweet.Filter("By: Santi Severo",$"imagen{num}");
+            tweet.Filter("By: Santi Severo",$"imagen0");
+            tweet.Filter("By: Santi Severo",$"imagen1");
+
 
         }
     }
